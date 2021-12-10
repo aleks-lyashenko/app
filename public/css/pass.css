@@ -1,0 +1,326 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /*font-size: 100%;*/
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-image: url(/img/bg-01.jpg);
+    background-size: cover;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+
+
+/*Подключение */
+
+@font-face {
+    font-family: 'Moreno Rough XThi';
+    src: url('/fonts/MorenoRough-XThin.eot');
+    src: url('/fonts/MorenoRough-XThin.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Moreno.woff') format('woff'),
+    url('/fonts/MorenoRough-XThin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+.wrapper {
+
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.content {
+    font-family: "Moreno Rough XThi";
+}
+
+.header {
+    min-height: 90vh;
+}
+
+.content-image {
+    text-align: center;
+    padding: 100px 0 0;
+    margin-bottom: 5px;
+}
+
+.content-head {
+    font-size: 30px;
+    color: #fff;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    margin-top: 45px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.search-input{
+    height: 40px;
+    margin-right: 20px;
+}
+
+input {
+    border: 2px solid #51B0EA;
+    display: block;
+    width: 400px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    box-shadow: 5px 10px 30px 0px #51B0EA;
+}
+
+input::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+input:focus {
+    border: 2px solid #EA10FD;
+}
+
+.search-button {
+    height: 40px;
+    align-items: center;
+}
+
+button {
+    display: block;
+    padding: 0px 25px;
+    background-color: #51B0EA;
+    border-radius: 15px;
+    color: #fff;
+    height: 50px;
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #fff;
+
+}
+button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #51B0EA;
+    border: 2px solid #51B0EA;
+
+}
+
+/*MySQL*/
+
+table {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    color: #fff;}
+
+th {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+
+/*Footer*/
+
+footer {
+    min-height: 10vh;
+    padding-top: 30px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-menu ul{
+    display: inline-block;
+    display: flex;
+}
+
+.link {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.link a {
+    color: #fff;
+    display: inline-block;
+}
+
+.link a:hover {
+    color: #EA10FD;
+}
+
+.date {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.date span {
+    color: #ffffff;
+}
+
+
+/*Адаптив*/
+
+@media (max-width: 720px) {
+    table {
+        max-width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        min-height: 807px;
+    }
+    .search {
+        flex-direction: column;
+    }
+
+    .search-input {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-right: 0;
+    }
+
+    input {
+        max-width: 85%;
+        margin-left: 7%;
+    }
+
+    .button {
+        margin-top: 20px;
+    }
+
+    .content-head {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        max-width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+
+    .footer-menu ul {
+        flex-direction: column;
+    }
+    .footer-menu a {
+        margin-top: 10px;
+    }
+
+}
