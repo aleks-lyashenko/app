@@ -1,26 +1,30 @@
 @extends('layouts.layout')
 
 @section('title')
-@parent:: Login
+@parent:: Home
 @endsection
 
 @section('content')
 
 <body>
 <div class="container">
-    <h1>Добро пожаловать</h1>
-    <img src="/public/img/guest.png" alt="">
-    <form action="" method="post">
-        @csrf
-        <input type="text" name="name" placeholder="Логин">
-        <input type="email" name="email" placeholder="Пароль">
-        <button>Login</button>
-    </form>
+    @auth()
+        <p>Вы зашли под пользователем <b>{{auth()->user()->name}}</p>
+        <img src="{{asset('public/storage/' . auth()->user()->avatar)}}" alt="avatar">
+        <p><a href="{{route('logout')}}">Выйти из профиля</a></p>
+    @endauth
 
-    <ul>
-        <li>Забыли <a href="">Имя пользователя / пароль?</a></li>
-        <li>Еще нет аккаунта? <a href="{{route('register.store')}}">Присоединиться</a></li>
-    </ul>
+    @guest()
+        <p>Чтобы воспользоваться нашим сайтом, вам нужно:</p>
+        <ul>
+            <li>
+                <a href="{{route('register.create')}}">Зарегистрироваться</a>
+            </li>
+            <li>
+                <a href="{{route('login')}}">Войти в свой профиль</a>
+            </li>
+        </ul>
+    @endguest
 </div>
 
 @endsection

@@ -67,23 +67,26 @@ $password = '';
                     if($result && $_POST['service'] != "")
                     {
                         $rows = mysqli_num_rows($result); // количество полученных строк; mysqli_num_rows - возвращает количество рядов результата запроса
-
-                        echo "<table>
-                  <tr>
-                    <th>  </th>
-                    <th>service</th>
-                    <th>login</th>
-                    <th>number</th>
-                    <th>img</th>
-                  </tr>";
-                        for ($i = 0 ; $i < $rows ; ++$i)
-                        {
-                            $row = mysqli_fetch_row($result);
-                            echo "<tr>";
-                            for ($j = 0 ; $j < 5 ; ++$j) echo "<td>$row[$j]</td>";
-                            echo "</tr>";
+                        if ($rows == 0) {
+                            echo '<br><br><br><br><br><br><br>Не найдено ни одного совпадения';
+                        } else {
+                            echo "<table>
+                          <tr>
+                            <th>  </th>
+                            <th>service</th>
+                            <th>login</th>
+                            <th>number</th>
+                            <th>img</th>
+                          </tr>";
+                            for ($i = 0 ; $i < $rows ; ++$i)
+                            {
+                                $row = mysqli_fetch_row($result);
+                                echo "<tr>";
+                                for ($j = 0 ; $j < 5 ; ++$j) echo "<td>$row[$j]</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
                         }
-                        echo "</table>";
 
                         // очищаем результат
                         mysqli_free_result($result);

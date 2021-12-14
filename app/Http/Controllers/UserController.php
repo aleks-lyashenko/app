@@ -23,7 +23,7 @@ class UserController extends Controller
            'avatar' => 'nullable|image',
         ]);
 
-        //Проверка, был ли загружен пароль
+        //Проверка, был ли загружен аватар
         if ($request->hasFile('avatar')) {
             $folder = date('Y-m-d');
             //Загрузка картинки
@@ -45,6 +45,30 @@ class UserController extends Controller
         Auth::login($user);
 
         //перенаправляем на главную
-        return redirect()->route('show');
+        return redirect()->route('home');
+    }
+
+    public function loginForm() {
+        return view('user.login');
+    }
+
+    public function login(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password,
+        ])) {
+            return redirect()->home();
+        }
+        return redirect()->back()->with('error', 'Неправильный логин или пароль');
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

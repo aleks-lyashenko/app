@@ -75,8 +75,9 @@
     a {
         color: #57b846;
     }
-    * {
-        /*border: 1px solid #000;*/
+    .alert-danger{
+        color: white;
+        background-color: darkred;
     }
 </style>
 
