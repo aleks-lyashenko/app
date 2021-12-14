@@ -28,7 +28,7 @@ $password = '';
         <header class="header">
             <div class="content">
                 <div class="content-image">
-                    <a href="{{route('pass')}}"><img src="img/lock1.png" title="Обновить" width="100px"></a>
+                    <a href="{{route('showNumber')}}"><img src="img/lock1.png" title="Обновить" width="100px"></a>
                 </div>
                 <div class="content-head">
                     <p>

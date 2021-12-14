@@ -12,6 +12,16 @@
         <p>Вы зашли под пользователем <b>{{auth()->user()->name}}</p>
         <img src="{{asset('public/storage/' . auth()->user()->avatar)}}" alt="avatar">
         <p><a href="{{route('logout')}}">Выйти из профиля</a></p>
+
+        <div class="navigation">
+            <ul>
+                <li><a href="{{route('showNumber')}}">Найти телефонный номер</a></li>
+                <li><a href="">Просмотр задач</a></li>
+                <li><a href="">Лента новостей</a></li>
+                <li><a href="">Добавить новость</a></li>
+                <li><a href="">Личный кабинет</a></li>
+            </ul>
+        </div>
     @endauth
 
     @guest()

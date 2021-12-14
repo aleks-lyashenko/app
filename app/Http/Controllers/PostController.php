@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function show() {
-        return view('service.pass');
+        return view('service.showNumber');
     }
 }
