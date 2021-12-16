@@ -43,7 +43,7 @@ $password = '';
                 <div class="search-input">
                     <form action="" method="post" id="nameform">
                         @csrf
-                        <input type="text" name="service" placeholder="Начните вводить сервис, логин или пароль">
+                        <input type="text" name="service" placeholder="Начните вводить сервис, логин или номер телефона">
                         <button type="submit" form="nameform">Поиск</button>
                     </form>
                 </div>

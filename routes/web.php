@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+//для гостей
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [UserController::class, 'create'])->name('register.create');
     Route::post('/register', [UserController::class, 'store'])->name('register.store');
@@ -26,16 +27,26 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/login', [UserController::class, 'login'])->name('login');
 });
 
-
+//для авторизованных
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
     Route::match(['get', 'post'], '/show', [PostController::class, 'show'])->name('showNumber');
+
+    Route::group(['prefix' => 'post'], function () {
+       Route::get('/create', [PostController::class, 'create'])->name('post.create');
+       Route::post('/', [PostController::class, 'store'])->name('post.store');
+       Route::get('/show', [PostController::class, 'showAll'])->name('post.show');
+    });
+
 });
+
+
 
 Route::fallback(function (){
     return view('errors.404');
 });
 
 
-//TODO Проверить работу посредников
+//TODO Проверить работу посредников - при вводе url страницы, которая не существует, перенаправляется на 404, но если
+// она не доступна из-за того что не вошел в профиль - перенаправляется на логин
