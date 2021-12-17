@@ -12,6 +12,10 @@ class PostController extends Controller
         return view('service.showNumber');
     }
 
+    public function front() {
+        return view('service.front');
+    }
+
     //Форма для добавления новой статьи
     public function create() {
         return view('posts.create');
