@@ -50,6 +50,7 @@
         font-size: 2rem;
         font-weight: bold;
         color: #515769;
+        text-transform: lowercase;
     }
 
     .menu {
@@ -339,6 +340,7 @@
         flex-direction: column;
         justify-content: end;
         color: white;
+        text-transform: lowercase;
     }
 
     @media (max-width: 800px) {
@@ -536,7 +538,9 @@
 <body>
     <header class="header _container">
         <div class="logo">
-            <span class="firstLetter">F</span><span>reedom</span>
+            <a href="">
+                <span class="firstLetter">F</span><span>reedom</span>
+            </a>
         </div>
         <nav class="menu">
 
@@ -672,7 +676,7 @@
                         <div class="overlay">
                             <div class="overlay__text">
                                 <h3>Clean Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae dolor dolorum enim esse hic ipsum libero, modi molestiae nobis non praesentium provident quam quis repellat sequi veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
                         </div>
                     </a>
@@ -681,7 +685,7 @@
                         <div class="overlay">
                             <div class="overlay__text">
                                 <h3>Clean Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae dolor dolorum enim esse hic ipsum libero, modi molestiae nobis non praesentium provident quam quis repellat sequi veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
                             </div>
                         </div>
                     </a>
@@ -693,7 +697,7 @@
                         <div class="overlay">
                             <div class="overlay__text">
                                 <h3>Clean Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae dolor dolorum enim esse hic ipsum libero, modi molestiae nobis non praesentium provident quam quis repellat sequi veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
                             </div>
                         </div>
                     </a>
@@ -702,7 +706,7 @@
                         <div class="overlay">
                             <div class="overlay__text">
                                 <h3>Clean Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae dolor dolorum enim esse hic ipsum libero, modi molestiae nobis non praesentium provident quam quis repellat sequi veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
                             </div>
                         </div>
                     </a>
@@ -711,7 +715,7 @@
                         <div class="overlay">
                             <div class="overlay__text">
                                 <h3>Clean Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae dolor dolorum enim esse hic ipsum libero, modi molestiae nobis non praesentium provident quam quis repellat sequi veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
                             </div>
                         </div>
                     </a>
