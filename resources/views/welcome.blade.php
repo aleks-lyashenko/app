@@ -17,8 +17,12 @@
                 <li><a href="{{route('showNumber')}}">Найти телефонный номер</a></li>
                 <li><a href="{{route('post.show')}}">Лента</a></li>
                 <li><a href="{{route('post.create')}}">Добавить статью</a></li>
+                <li><a href="{{route('post.create')}}">Изменить статью</a></li>
                 <li><a href="">Личный кабинет</a></li>
                 <li><a href="">Просмотр задач</a></li>
+                <li><a href="{{route('service.front')}}">Песочница</a></li>
+                <li><a href="{{route('verstka')}}">Верстка</a></li>
+                <li><a href="{{route('blanks')}}">Шаблоны</a></li>
             </ul>
         </div>
     @endauth

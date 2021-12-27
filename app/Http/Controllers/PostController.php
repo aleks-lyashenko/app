@@ -15,6 +15,9 @@ class PostController extends Controller
     public function front() {
         return view('service.front');
     }
+    public function verstka() {
+        return view('free.layout');
+    }
 
     //Форма для добавления новой статьи
     public function create() {

@@ -32,7 +32,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
     Route::match(['get', 'post'], '/show', [PostController::class, 'show'])->name('showNumber');
-    Route::get('front', [PostController::class, 'front']);
+    Route::get('front', [PostController::class, 'front'])->name('service.front');
+    Route::get('verstka', [PostController::class, 'verstka'])->name('verstka');
+    Route::get('blanks', function () {
+        return view('blanks.header');
+    })->name('blanks');
 
     Route::group(['prefix' => 'post'], function () {
        Route::get('/create', [PostController::class, 'create'])->name('post.create');
