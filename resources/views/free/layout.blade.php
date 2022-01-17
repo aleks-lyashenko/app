@@ -816,25 +816,15 @@
         <a href="#top">Top</a>
     </div>
 
-    <div class="_container">
-        <form action="" method="post">
-            @csrf
-            <input style="margin: 15px; " type="text" name="name">
-            <input style="margin: 15px; " type="email" name="email">
-            <button style="margin: 15px; padding: 0 5px">Go</button>
-        </form>
-
-            <p class="response"></p>
-    </div>
-
     <script>
         let burger = document.querySelector('.menu__burger');
-        let secondary = document.querySelector('.secondary');
-        let bar1 = document.querySelector('.bar1');
-        let bar2 = document.querySelector('.bar2');
-        let bar3 = document.querySelector('.bar3');
 
         burger.addEventListener('click', function () {
+            let secondary = document.querySelector('.secondary');
+            let bar1 = document.querySelector('.bar1');
+            let bar2 = document.querySelector('.bar2');
+            let bar3 = document.querySelector('.bar3');
+
             bar1.classList.toggle('bar_active');
             bar2.classList.toggle('bar_active');
             bar3.classList.toggle('bar_active');
@@ -860,90 +850,6 @@
             clients[i].style.transform = 'translate(1220px)';
             clients[i].style.transition = 'all 10s';
         }
-
-        //Test
-        // window.location = 'http://yandex.ru';
-        // window.document.body.innerHTML = "<h1>Hello</h1>";
-        // setInterval( function () {
-        //     window.document.body.innerHTML = "<h1>Hello</h1>";
-        // } ,2000);
-        window.onload = function () {
-            // window.open('http://yandex.ru');
-            // console.log(window.name);
-            // console.log(self.innerHeight);
-            // console.log(self.innerWidth);
-            // console.log(screen);
-            // setTimeout(delay, 5000);
-            // let children = document.querySelectorAll('.footer-menu li');
-            // for(i=0; i<children.length; i++) {
-            //     children[i].addEventListener('click', function () {
-            //         alert(this.textContent);
-            //     });
-            // }
-            // for (let child of children) {
-            //     child.addEventListener('click', ()=>{
-            //         alert(child.textContent);
-            //     });
-            // }
-
-            //AJAX
-
-            let button = document.getElementsByTagName('button');
-            let response = document.querySelector('.response');
-            console.log(button);
-            button[0].addEventListener('click', function(e) {
-                let request = new XMLHttpRequest();
-                request.open('POST', 'ajax.php');
-
-                //Заголовок, если нужно что-то передать на сервер
-                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                //custom header
-                request.setRequestHeader('myHead', 'Some string');
-
-                request.onreadystatechange = function () {
-                    if (request.readyState === 4 && request.status === 200) {
-                        response.innerHTML = request.responseText;
-                    }
-                };
-
-                request.send("name=Alex");
-
-                alert('Clicked');
-                e.preventDefault();
-            });
-
-
-            // window.onclick = (e)=>{
-            //   alert(e.target);
-            // };
-
-            if(clientsBox.attachEvent) {
-                clientsBox.attachEvent('onclick', func, false);
-            }
-
-            function func () {alert("IE")}
-
-            // let form = document.forms[0];
-            // form.elements.email.value = 'admin@mail.ru';
-            // console.log(children);
-
-            // console.log(clientsBox.nodeType);
-            // console.log(burger.nodeType);
-            // clientsBox.addEventListener('click', ()=>{
-            //    clientsBox.appendChild(burger);
-            // });
-
-        };
-
-        // function delay () {
-        //     location.reload();
-        // }
-
-        // let parts = location.search.substring(1).split('&');
-
-        // console.log(location);
-
-        // location.assign('http://ya.ru');
 
 
     </script>
