@@ -529,10 +529,16 @@
         color: white;
         font-size: smaller;
     }
-
     .shown {
         display: block;
     }
+
+    @media (min-width: 801px) {
+        .shown {
+            display: none;
+        }
+    }
+
 
 </style>
 <body>
@@ -817,6 +823,8 @@
     </div>
 
     <script>
+        'use strict'
+
         let burger = document.querySelector('.menu__burger');
 
         burger.addEventListener('click', function () {
@@ -846,11 +854,23 @@
         // console.log(clientWidth);
 
         clientsBox.style = 'overflow: hidden';
-        for(i=0; i<clients.length;i++) {
+        for(let i=0; i<clients.length;i++) {
             clients[i].style.transform = 'translate(1220px)';
             clients[i].style.transition = 'all 10s';
         }
 
+        //Объекты
+        let user = {
+            name: 'Alex',
+            age: 32,
+            getName() {
+                alert(this.name);
+            }
+        };
+
+        user.getName();
+
+        console.log(user.age);
 
     </script>
 
